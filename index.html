@@ -1,1 +1,733 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apex Eco-Architecture | Sustainable Modular Buildings • Cambridge</title>
+  <meta name="description" content="Apex Eco-Architecture — Cambridge architectural design studio creating zero-concrete ground-screw timber studios, sedum living roofs, and self-build specification packs." />
+  <style>
+    :root {
+      --bg-forest: #0a120e;
+      --bg-timber: #121c17;
+      --bg-card: #17241e;
+      --text-cream: #f4f3ee;
+      --text-sage: #a3b8ad;
+      --cedar: #c87d4b;
+      --moss: #52b788;
+      --bronze: #d4a373;
+      --border-moss: rgba(82, 183, 136, 0.24);
+      --border-subtle: rgba(244, 243, 238, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-forest);
+      color: var(--text-cream);
+      line-height: 1.65;
+      background-image:
+        linear-gradient(rgba(82, 183, 136, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(82, 183, 136, 0.04) 1px, transparent 1px),
+        radial-gradient(circle at 82% 14%, rgba(200, 125, 75, 0.12), transparent 45%);
+      background-size: 48px 48px, 48px 48px, 100% 100%;
+    }
+
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(10, 18, 14, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-moss);
+    }
+
+    .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+      gap: 12px;
+    }
+
+    .brand-lockup {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .arch-mark {
+      width: 34px;
+      height: 34px;
+      border: 1.5px solid var(--bronze);
+      border-radius: 6px;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-size: 0.9rem;
+      color: var(--moss);
+      background: rgba(82, 183, 136, 0.08);
+    }
+
+    .brand-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: #ffffff;
+      display: block;
+    }
+
+    .brand-sub {
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--bronze);
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-sage);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    .btn-nav {
+      padding: 8px 15px;
+      border-radius: 6px;
+      background: rgba(82, 183, 136, 0.15);
+      border: 1px solid var(--moss);
+      color: #ffffff !important;
+    }
+
+    .hero {
+      padding: 68px 0 56px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border-moss);
+      background: rgba(82, 183, 136, 0.1);
+      color: var(--moss);
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.35rem);
+      font-weight: 800;
+      line-height: 1.13;
+      max-width: 860px;
+      margin-bottom: 18px;
+      color: #ffffff;
+    }
+
+    .hero h1 span {
+      color: var(--bronze);
+    }
+
+    .hero p {
+      font-size: 1.08rem;
+      color: var(--text-sage);
+      max-width: 700px;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 44px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 13px 26px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      text-decoration: none;
+      color: #0a120e;
+      background: linear-gradient(135deg, #74c69d 0%, #52b788 100%);
+      box-shadow: 0 8px 24px rgba(82, 183, 136, 0.24);
+      transition: transform 0.2s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      display: inline-block;
+      padding: 13px 26px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      text-decoration: none;
+      color: var(--text-cream);
+      border: 1px solid var(--bronze);
+      background: rgba(23, 36, 30, 0.8);
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      background: rgba(212, 163, 115, 0.14);
+    }
+
+    .specs-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+      gap: 14px;
+    }
+
+    .spec-box {
+      background: var(--bg-timber);
+      border: 1px solid var(--border-subtle);
+      border-left: 3px solid var(--moss);
+      border-radius: 8px;
+      padding: 16px;
+    }
+
+    .spec-box.cedar {
+      border-left-color: var(--cedar);
+    }
+
+    .spec-val {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .spec-lbl {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-sage);
+    }
+
+    section {
+      padding: 60px 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .section-head {
+      margin-bottom: 34px;
+    }
+
+    .section-kicker {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--bronze);
+      margin-bottom: 6px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .section-head p {
+      color: var(--text-sage);
+      max-width: 670px;
+    }
+
+    .models-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 22px;
+    }
+
+    .model-card {
+      background: linear-gradient(165deg, #182620 0%, #0e1713 100%);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.22s, border-color 0.22s;
+    }
+
+    .model-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--moss);
+    }
+
+    .model-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .model-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 4px 10px;
+      border-radius: 4px;
+      background: rgba(82, 183, 136, 0.14);
+      color: var(--moss);
+    }
+
+    .model-dim {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--bronze);
+    }
+
+    .model-card h3 {
+      font-size: 1.28rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .model-card p {
+      font-size: 0.9rem;
+      color: var(--text-sage);
+      margin-bottom: 16px;
+    }
+
+    .model-specs {
+      list-style: none;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 12px;
+      margin-bottom: 20px;
+    }
+
+    .model-specs li {
+      font-size: 0.83rem;
+      color: var(--text-cream);
+      margin-bottom: 6px;
+      padding-left: 15px;
+      position: relative;
+    }
+
+    .model-specs li::before {
+      content: "▪";
+      position: absolute;
+      left: 0;
+      color: var(--bronze);
+    }
+
+    .model-btn {
+      display: block;
+      text-align: center;
+      padding: 10px 14px;
+      border-radius: 6px;
+      border: 1px solid var(--border-moss);
+      background: rgba(82, 183, 136, 0.1);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 700;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .model-btn:hover {
+      background: var(--moss);
+      color: #0a120e;
+    }
+
+    .materials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+      gap: 20px;
+    }
+
+    .mat-card {
+      background: var(--bg-timber);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 24px;
+    }
+
+    .mat-num {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--bronze);
+      margin-bottom: 8px;
+    }
+
+    .mat-card h3 {
+      font-size: 1.08rem;
+      margin-bottom: 8px;
+      color: #ffffff;
+    }
+
+    .mat-card p {
+      font-size: 0.88rem;
+      color: var(--text-sage);
+    }
+
+    .contact-panel {
+      background: linear-gradient(135deg, #16241e 0%, #0c1410 100%);
+      border: 1px solid var(--border-moss);
+      border-radius: 14px;
+      padding: 34px 28px;
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .contact-item {
+      background: rgba(10, 18, 14, 0.78);
+      border: 1px solid var(--border-subtle);
+      padding: 14px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #ffffff;
+      transition: border-color 0.2s;
+    }
+
+    .contact-item:hover {
+      border-color: var(--moss);
+    }
+
+    .contact-item span {
+      display: block;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--bronze);
+      font-weight: 700;
+    }
+
+    .contact-item strong {
+      font-size: 0.98rem;
+    }
+
+    footer {
+      padding: 32px 0;
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--text-sage);
+    }
+
+    @media (max-width: 780px) {
+      .nav-links a:not(.btn-nav) {
+        display: none;
+      }
+      .contact-panel {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav-bar">
+      <div class="brand-lockup">
+        <div class="arch-mark">AA</div>
+        <div>
+          <span class="brand-title">Apex Eco-Architecture</span>
+          <span class="brand-sub">Cambridge • Ground-Screw &amp; Modular Design</span>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#blueprints">Signature Builds</a>
+        <a href="#engineering">Engineering &amp; Materials</a>
+        <a href="#licensing">Self-Build &amp; B2B</a>
+        <a href="#contact" class="btn-nav">Studio Desk</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">Cambridge, United Kingdom • Sustainable Spatial Design</div>
+        <h1>Zero-Concrete <span>Modular Eco-Architecture</span> Engineered for Light &amp; Longevity.</h1>
+        <p>
+          Led by Architectural Designer Darryll Lee Robert Grass, Apex Eco-Architecture creates reversible ground-screw timber and steel buildings, living sedum roofs, and zero-waste modular cassette systems proportioned through sacred geometry.
+        </p>
+        <div class="hero-actions">
+          <a href="#blueprints" class="btn-primary">Explore Architectural Concepts</a>
+          <a href="#licensing" class="btn-secondary">Self-Build Packs &amp; Manufacturer IP</a>
+        </div>
+
+        <div class="specs-strip">
+          <div class="spec-box">
+            <div class="spec-val">0% Concrete</div>
+            <div class="spec-lbl">Galvanized Ground Screws</div>
+          </div>
+          <div class="spec-box cedar">
+            <div class="spec-val">1200×2400</div>
+            <div class="spec-lbl">Zero-Waste Cassette Grid</div>
+          </div>
+          <div class="spec-box">
+            <div class="spec-val">1 : 1.618</div>
+            <div class="spec-lbl">Golden Ratio Proportions</div>
+          </div>
+          <div class="spec-box cedar">
+            <div class="spec-val">Living Roofs</div>
+            <div class="spec-lbl">Biodiverse Sedum Systems</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="blueprints">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Architectural Portfolio</div>
+          <h2>Signature Eco-Pods, Studios &amp; Sanctuaries</h2>
+          <p>Precision-drafted modular structures designed for rapid off-site fabrication, minimal ground disturbance, and natural thermal performance.</p>
+        </div>
+
+        <div class="models-grid">
+          <article class="model-card">
+            <div>
+              <div class="model-meta">
+                <span class="model-tag">Self-Build Spec Pack</span>
+                <span class="model-dim">3.6m × 3.6m • 13m²</span>
+              </div>
+              <h3>The Golden Grid Eco-Pod</h3>
+              <p>Compact, high-efficiency garden studio or retreat engineered on a strict 1200mm modular cassette grid with zero sheet-material offcuts.</p>
+              <ul class="model-specs">
+                <li>Galvanized steel ground-screw foundation</li>
+                <li>Western Red Cedar &amp; bronzed glazing</li>
+                <li>Turnkey self-build pack on Gumroad</li>
+              </ul>
+            </div>
+            <a href="https://dgrassdesign.gumroad.com" target="_blank" rel="noopener" class="model-btn">View Self-Build Pack</a>
+          </article>
+
+          <article class="model-card">
+            <div>
+              <div class="model-meta">
+                <span class="model-tag">Garden Studio</span>
+                <span class="model-dim">4.0m × 4.0m • 16m²</span>
+              </div>
+              <h3>The Newnham Garden Studio</h3>
+              <p>Architectural workspace and creative sanctuary tailored for Cambridge townhouses and heritage gardens requiring reversible foundations.</p>
+              <ul class="model-specs">
+                <li>Shou Sugi Ban charred timber accents</li>
+                <li>Extensive wildflower &amp; sedum living roof</li>
+                <li>High-insulation breathable timber envelope</li>
+              </ul>
+            </div>
+            <a href="#contact" class="model-btn">Enquire About Custom Spec</a>
+          </article>
+
+          <article class="model-card">
+            <div>
+              <div class="model-meta">
+                <span class="model-tag">Curved Glulam</span>
+                <span class="model-dim">Bowfront Prototype</span>
+              </div>
+              <h3>The Bowfront Summerhouse</h3>
+              <p>Panoramic curved-glazing pavilion uniting traditional Cambridge joinery aesthetics with modern laminated timber engineering.</p>
+              <ul class="model-specs">
+                <li>Sweeping solar-gain front elevation</li>
+                <li>Siberian Larch vertical rainscreen cladding</li>
+                <li>Ideal for garden rooms &amp; boutique hospitality</li>
+              </ul>
+            </div>
+            <a href="#contact" class="model-btn">Request Design Brief</a>
+          </article>
+
+          <article class="model-card">
+            <div>
+              <div class="model-meta">
+                <span class="model-tag">Flagship Sanctuary</span>
+                <span class="model-dim">21.6m Diameter</span>
+              </div>
+              <h3>The Rotunda of Light</h3>
+              <p>Monumental circular timber-and-glass sanctuary engineered for community hubs, wellness retreats, and Lillie's Centres respite campuses.</p>
+              <ul class="model-specs">
+                <li>Radial glulam roof structure &amp; central oculus</li>
+                <li>360-degree passive daylighting</li>
+                <li>Acoustic timber baffles &amp; natural ventilation</li>
+              </ul>
+            </div>
+            <a href="#contact" class="model-btn">Discuss Campus Licensing</a>
+          </article>
+
+          <article class="model-card">
+            <div>
+              <div class="model-meta">
+                <span class="model-tag">Multi-Level CAD Set</span>
+                <span class="model-dim">14.0m × 6.0m • 3 Levels</span>
+              </div>
+              <h3>Luxury Cedar &amp; Bronze Eco-Home</h3>
+              <p>Three-storey contemporary residential concept combining dark standing-seam metal, warm cedar soffits, and bronzed triple glazing.</p>
+              <ul class="model-specs">
+                <li>Full floor plan sheets (A-101 to A-103)</li>
+                <li>Integrated cantilevered terraces</li>
+                <li>Designed for low-carbon self-build plots</li>
+              </ul>
+            </div>
+            <a href="#contact" class="model-btn">Request CAD Overview</a>
+          </article>
+
+          <article class="model-card">
+            <div>
+              <div class="model-meta">
+                <span class="model-tag">Modular Courtyard</span>
+                <span class="model-dim">9.0m × 6.0m × 3.0m</span>
+              </div>
+              <h3>The Sacred Helix &amp; Courtyard System</h3>
+              <p>Configurable multi-pod courtyard layout for eco-tourism lodges, off-grid retreats, and family annex compounds.</p>
+              <ul class="model-specs">
+                <li>Expandable pod-by-pod phased installation</li>
+                <li>Off-grid solar &amp; rainwater harvesting ready</li>
+                <li>Available for UK/EU manufacturer licensing</li>
+              </ul>
+            </div>
+            <a href="#contact" class="model-btn">Partner on Modular Rollout</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="engineering">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Construction Methodology</div>
+          <h2>Four Pillars of Apex Eco-Architecture</h2>
+        </div>
+
+        <div class="materials-grid">
+          <div class="mat-card">
+            <div class="mat-num">01 // FOUNDATIONS</div>
+            <h3>Reversible Ground Screws</h3>
+            <p>Eliminates carbon-heavy concrete pours and excavation—installing in hours with zero curing delay and leaving soil ecosystems intact.</p>
+          </div>
+          <div class="mat-card">
+            <div class="mat-num">02 // GEOMETRY</div>
+            <h3>Zero-Waste Cassette Grid</h3>
+            <p>Every wall, floor, and roof panel aligns to standard 1200mm × 2400mm structural sheet dimensions, slashing site waste and build costs.</p>
+          </div>
+          <div class="mat-card">
+            <div class="mat-num">03 // ENVELOPE</div>
+            <h3>Natural Timber &amp; Bronze Glass</h3>
+            <p>Western Red Cedar, Siberian Larch, Shou Sugi Ban charred cladding, and solar-control bronzed glazing built to weather gracefully.</p>
+          </div>
+          <div class="mat-card">
+            <div class="mat-num">04 // ECOLOGY</div>
+            <h3>Sedum Living Roofs</h3>
+            <p>Retains rainwater runoff, boosts thermal mass, and restores pollinator habitats directly above the building footprint.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="licensing">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Collaboration &amp; IP</div>
+          <h2>Self-Build Packs &amp; B2B Manufacturer Licensing</h2>
+          <p>We collaborate with self-builders, timber-frame manufacturers, eco-resort operators, and philanthropic trusts across the UK and Europe.</p>
+        </div>
+
+        <div class="materials-grid">
+          <div class="mat-card">
+            <div class="mat-num">OPTION A // SELF-BUILDERS</div>
+            <h3>Digital Specification Packs</h3>
+            <p>Download dimensioned architectural layouts, material schedules, and ground-screw grid guides to build your own studio with confidence.</p>
+          </div>
+          <div class="mat-card">
+            <div class="mat-num">OPTION B // MANUFACTURERS</div>
+            <h3>B2B Design &amp; IP Licensing</h3>
+            <p>License Apex Eco-Architecture pod and touring concepts for factory prefabrication under structured royalty or regional agreements.</p>
+          </div>
+          <div class="mat-card">
+            <div class="mat-num">OPTION C // SANCTUARY PROJECTS</div>
+            <h3>Community &amp; Respite Campuses</h3>
+            <p>Bespoke masterplanning for eco-village schools, wellness retreats, and Lillie's Centres family respite sanctuaries.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="border-bottom: none;">
+      <div class="container">
+        <div class="contact-panel">
+          <div>
+            <div class="section-kicker">Architectural Studio Desk</div>
+            <h2 style="font-size: 1.85rem; margin-bottom: 12px;">Discuss a Build, Spec Pack or Partnership</h2>
+            <p style="color: var(--text-sage); margin-bottom: 16px;">
+              Led by <strong>Darryll Lee Robert Grass</strong>, Lead Architectural Designer at Apex Eco-Architecture (a division of CBD Enterprises UK). Written email inquiries preferred for specifications and CAD discussions.
+            </p>
+            <p style="font-size: 0.85rem; color: var(--bronze);">
+              <em>"If a job's worth doing, it's worth doing properly." — Cambridge, UK</em>
+            </p>
+          </div>
+
+          <div class="contact-list">
+            <a href="mailto:apexecoarchitecture@gmail.com?subject=Apex%20Eco-Architecture%20Enquiry" class="contact-item">
+              <span>Studio Email</span>
+              <strong>apexecoarchitecture@gmail.com</strong>
+            </a>
+            <a href="tel:01223650566" class="contact-item">
+              <span>Cambridge Studio Line</span>
+              <strong>(01223) 650566</strong>
+            </a>
+            <a href="https://dgrassdesign.gumroad.com" target="_blank" rel="noopener" class="contact-item">
+              <span>Digital Spec Packs</span>
+              <strong>dgrassdesign.gumroad.com</strong>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Apex Eco-Architecture • A Trading Division of CBD Enterprises UK • Cambridge, England.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
 
